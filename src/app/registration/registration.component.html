@@ -1,0 +1,29 @@
+<div class="container">
+ 
+    <ng-template #mymodal let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Super User</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+       {{response}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark"  (click)="modal.close('Save click')">Ok</button>
+        </div>
+      </ng-template>
+    <form #createSuperUser="ngForm" (submit)="create(createSuperUser,mymodal)">
+        <div class="form-group">
+            <label for="formGroupExampleInput">Add super user</label>
+            <input type="text" class="form-control" name="roleName" id="formGroupExampleInput"
+                placeholder="   IMEI NUMBER/DEVICE ID" ngModel>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary mb-2"  *ngIf="status1 ==true">Submit
+            </button>
+        </div>
+    </form>
+    <mat-spinner #progress *ngIf="status ==true"></mat-spinner>
+</div>

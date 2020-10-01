@@ -1,0 +1,37 @@
+<div class="center">
+  <mat-spinner diameter=50 mode="indeterminate" color="accent" *ngIf="status ==false"></mat-spinner>
+</div>
+<div class="card-body">
+  <div class="table-responsive">
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" *ngIf="status ==true">
+      <thead>
+        <tr>
+          <th>S.N.</th>
+          <th>UserCode</th>
+          <th>IMEINumber</th>
+          <th>CreateByName</th>
+          <th>CreatedOn</th>
+          <th>Status</th>
+          <th>OSVersion</th>
+          <th>DeviceModel</th>
+          <th>IsActive</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let data1 of data">
+          <td>{{data1.rownum}}</td>
+          <td>{{data1.UserCode}}</td>
+          <td>{{data1.IMEINumber}}</td>
+          <td>{{data1.CreateByName}}</td>
+          <td>{{data1.CreatedOn}}</td>
+          <td>{{data1.Status}}</td>
+          <td>{{data1.OSVersion}}</td>
+          <td>{{data1.DeviceModel}}</td>
+          <td>{{data1.IsActive}}</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
